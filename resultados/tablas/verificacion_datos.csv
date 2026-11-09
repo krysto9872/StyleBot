@@ -1,0 +1,4 @@
+﻿conjunto,imagenes,forma_imagen,tipo_pixeles,minimo,maximo,valores_no_finitos,etiquetas_invalidas
+entrenamiento,48000,28x28,float32,0.0,1.0,0,0
+validacion,12000,28x28,float32,0.0,1.0,0,0
+prueba,10000,28x28,float32,0.0,1.0,0,0
