@@ -2,6 +2,14 @@
 
 StyleBot es un proyecto académico que desarrolla un sistema para identificar prendas de ropa y simular su acomodo en un almacén. La primera entrega utiliza Fashion-MNIST para preparar los datos, comparar métodos clásicos de aprendizaje automático y explorar prendas similares.
 
+## Integrantes y responsabilidades
+
+- Krysto Zuñiga: Líder y preparación de datos.
+- Ángel Godinez: Aprendizaje automático clásico.
+- Luis Gaytan: Simulación y aprendizaje por refuerzo.
+- Jacqueline Soto: Integración y documentación.
+- Juan Flores: Redes neuronales.
+
 ## Primera entrega
 
 La preparación común de los datos ya incluye:
