@@ -1,0 +1,38 @@
+{
+  "dataset": "Fashion-MNIST",
+  "semilla": 42,
+  "entrenamiento": 48000,
+  "validacion": 12000,
+  "prueba": 10000,
+  "origen_train_val": "60,000 imágenes oficiales de entrenamiento",
+  "origen_test": "10,000 imágenes oficiales de prueba, conservadas",
+  "separacion": "train_test_split, test_size=0.20, stratify=y_base",
+  "forma_imagen": [
+    28,
+    28
+  ],
+  "normalizacion": "float32 / 255.0, una sola vez",
+  "categorias": {
+    "0": "Camiseta",
+    "1": "Pantalón",
+    "2": "Suéter",
+    "3": "Vestido",
+    "4": "Abrigo",
+    "5": "Sandalia",
+    "6": "Camisa",
+    "7": "Tenis",
+    "8": "Bolso",
+    "9": "Botín"
+  },
+  "sha256_indices": {
+    "idx_train": "1c0cffec1476c830767b282ef3e3354d14cb1e3e2ecb436f13ee8537f0de19c9",
+    "idx_val": "e0f8e8bab9913b94050db422b1a42d5223f440f15b110f7ae060debf1332089f",
+    "idx_test": "9e1c19b3fdc185411bd1a987deb6a9fda2531116aac060a84c4d878854d1c099"
+  },
+  "versiones": {
+    "numpy": "2.4.6",
+    "scikit-learn": "1.6.1",
+    "matplotlib": "3.10.0",
+    "tensorflow": "2.21.0"
+  }
+}
