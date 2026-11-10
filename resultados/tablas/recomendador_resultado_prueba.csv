@@ -1,0 +1,3 @@
+﻿conjunto,variante,precision_at_5
+prueba,PCA 50 + coseno,0.8211
+prueba,Aleatorio (media de 5 semillas),0.1002

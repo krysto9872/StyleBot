@@ -1,0 +1,6 @@
+﻿variante,precision_at_5,segundos
+Píxeles 784 + coseno,0.8283,10.8
+PCA 50 + euclidiana,0.8252,1.1
+PCA 50 + coseno,0.8321,5.0
+"PCA 50 + coseno, mismo grupo K-Means",0.8287,0.5
+Aleatorio (media de 5 semillas),0.1001,0

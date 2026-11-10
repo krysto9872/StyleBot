@@ -1,0 +1,11 @@
+﻿id,categoria,precision_at_5_recomendador,precision_at_5_aleatorio
+0,Camiseta,0.7608,0.0952
+1,Pantalón,0.963,0.104
+2,Suéter,0.7092,0.0978
+3,Vestido,0.8318,0.103
+4,Abrigo,0.7136,0.1056
+5,Sandalia,0.8734,0.1032
+6,Camisa,0.5562,0.0978
+7,Tenis,0.9098,0.0974
+8,Bolso,0.9536,0.0994
+9,Botín,0.9394,0.109
