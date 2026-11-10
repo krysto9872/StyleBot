@@ -4,11 +4,11 @@ StyleBot es un proyecto académico que desarrolla un sistema para identificar pr
 
 ## Integrantes y responsabilidades
 
-- Krysto Zuñiga: Líder y preparación de datos.
-- Ángel Godinez: Aprendizaje automático clásico.
-- Luis Gaytan: Simulación y aprendizaje por refuerzo.
-- Jacqueline Soto: Integración y documentación.
-- Juan Flores: Redes neuronales.
+- Krysto Alberto Adan Jauregui Zuñiga: Coordinador del proyecto y responsable de datos
+- Jacqueline Soto: Responsable de integración, documentación y demostración
+- Juan José Aranda Flores: Responsable de redes neuronales (CNN)
+- Luis Ángel Mendosa Gaytan: Responsable de simulación y aprendizaje por refuerzo
+- Ángel Uriel Martínez Godinez: Responsable de aprendizaje automático clásico
 
 ## Primera entrega
 
