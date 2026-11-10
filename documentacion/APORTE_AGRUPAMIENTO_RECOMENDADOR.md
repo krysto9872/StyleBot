@@ -106,14 +106,19 @@ Se revisó `03_modelos.ipynb` junto con `02_caracteristicas.ipynb`:
 
 ## Archivos producidos
 
-- `notebooks/04_no_supervisado.ipynb`
+- `notebooks/04_no_supervisado.ipynb`, `notebooks/05_aprendizaje_no_supervisado.ipynb` y `notebooks/06_sistema_recomendacion.ipynb`
 - `src/recomendador_stylebot.py`
 - `resultados/tablas/`: `kmeans_*.csv` y `recomendador_*.csv`
 - `resultados/graficas/`: `kmeans_*.png`, `tsne_categorias_y_grupos.png` y `recomendador_*.png`
 
 ## Para la integración (`E1_StyleBot.ipynb`)
 
-El archivo `notebooks/E1_secciones_5_6_no_supervisado.ipynb` es `E1_StyleBot.ipynb` con las secciones 5 y 6 ya llenas y las demás sin cambios. Integración puede copiar esas celdas o usar el archivo directamente.
+Las secciones 5 y 6 están separadas en dos notebooks que se ejecutan solos, cada uno con la carga común al inicio:
+
+- `notebooks/05_aprendizaje_no_supervisado.ipynb` → **sección 5** de E1: PCA, ejemplo pequeño de K-Means, revisión de k, K-Means con 10 grupos, ejemplos de cada grupo y t-SNE.
+- `notebooks/06_sistema_recomendacion.ipynb` → **sección 6** de E1: recomendador, Precision@5, comparación contra el azar y ejemplos de aciertos y fallos. Repite al inicio las funciones, el PCA y K-Means de la sección 5 para funcionar solo; dentro de E1 basta copiar desde "## 6 Sistema de recomendación".
+
+`notebooks/04_no_supervisado.ipynb` reúne ambas partes con la explicación completa.
 
 Ajustes hechos para que no choquen con otras secciones:
 
