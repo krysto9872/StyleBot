@@ -44,6 +44,18 @@ StyleBot/
 3. Conservar la semilla, categorías y división establecidas.
 4. No utilizar el conjunto de prueba para entrenar o seleccionar parámetros.
 
+## Notebooks de la primera entrega
+
+- [`01_datos.ipynb`](notebooks/01_datos.ipynb): carga, división y comprobación de Fashion-MNIST.
+- [`02_caracteristicas.ipynb`](notebooks/02_caracteristicas.ipynb): extracción de características con PCA, HOG y momentos de Hu.
+- [`03_modeloss.ipynb`](notebooks/03_modeloss.ipynb): modelos clásicos supervisados, validación cruzada y métricas.
+- [`04_no_supervisado.ipynb`](notebooks/04_no_supervisado.ipynb): K-Means, t-SNE y sistema de recomendación completo.
+- [`05_aprendizaje_no_supervisado.ipynb`](notebooks/05_aprendizaje_no_supervisado.ipynb): sección separada de agrupamiento.
+- [`06_sistema_recomendacion.ipynb`](notebooks/06_sistema_recomendacion.ipynb): sección separada del recomendador.
+- [`E1_StyleBot.ipynb`](notebooks/E1_StyleBot.ipynb): notebook final integrado de la primera entrega.
+
+Antes de entregar, se debe abrir `notebooks/E1_StyleBot.ipynb` en Google Colab, ejecutar todas las celdas de arriba hacia abajo y comprobar que las secciones 1 a 8, las tablas, las gráficas y las conclusiones aparezcan sin errores.
+
 ## Fuentes principales
 
 - [TensorFlow Fashion-MNIST](https://www.tensorflow.org/api_docs/python/tf/keras/datasets/fashion_mnist/load_data)
