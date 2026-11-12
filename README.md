@@ -28,7 +28,7 @@ El notebook principal de esta parte es [`notebooks/01_datos.ipynb`](notebooks/01
 ```text
 StyleBot/
 ├── datos/                 Categorías, índices y protocolo reproducible
-├── documentacion/         Aportaciones para el informe
+├── documentacion/         Informe final y aportaciones
 ├── notebooks/             Notebooks de cada parte
 ├── resultados/            Tablas y gráficas generadas
 ├── src/                   Funciones reutilizables
@@ -48,11 +48,13 @@ StyleBot/
 
 - [`01_datos.ipynb`](notebooks/01_datos.ipynb): carga, división y comprobación de Fashion-MNIST.
 - [`02_caracteristicas.ipynb`](notebooks/02_caracteristicas.ipynb): extracción de características con PCA, HOG y momentos de Hu.
-- [`03_modeloss.ipynb`](notebooks/03_modeloss.ipynb): modelos clásicos supervisados, validación cruzada y métricas.
+- [`03_modelos.ipynb`](notebooks/03_modelos.ipynb): modelos clásicos supervisados, validación cruzada y métricas.
 - [`04_no_supervisado.ipynb`](notebooks/04_no_supervisado.ipynb): K-Means, t-SNE y sistema de recomendación completo.
 - [`05_aprendizaje_no_supervisado.ipynb`](notebooks/05_aprendizaje_no_supervisado.ipynb): sección separada de agrupamiento.
 - [`06_sistema_recomendacion.ipynb`](notebooks/06_sistema_recomendacion.ipynb): sección separada del recomendador.
 - [`E1_StyleBot.ipynb`](notebooks/E1_StyleBot.ipynb): notebook final integrado de la primera entrega.
+
+El informe de la primera entrega está en [`documentacion/ProyectoFinal_StyleBot.docx`](documentacion/ProyectoFinal_StyleBot.docx).
 
 Antes de entregar, se debe abrir `notebooks/E1_StyleBot.ipynb` en Google Colab, ejecutar todas las celdas de arriba hacia abajo y comprobar que las secciones 1 a 8, las tablas, las gráficas y las conclusiones aparezcan sin errores.
 
