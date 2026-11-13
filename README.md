@@ -25,6 +25,7 @@ El notebook principal de esta parte es [`notebooks/01_datos.ipynb`](notebooks/01
 
 ## Estructura inicial
 
+```text
 StyleBot/
 ├── datos/                 Categorías, índices y protocolo reproducible
 ├── documentacion/         Informe final y aportaciones
@@ -34,7 +35,7 @@ StyleBot/
 ├── README.md              Descripción general
 ├── README_DATOS.md        Instrucciones de preparación de datos
 └── requirements.txt       Bibliotecas utilizadas
-
+```
 
 ## Ejecución
 
@@ -76,6 +77,7 @@ En esta entrega, el notebook principal esta en `notebooks/entrega2/00_datos_cnn.
 
 ## Estructura inicial
 
+```text
 StyleBot/
 ├── notebooks/
 │   └── entrega2/
@@ -92,6 +94,7 @@ StyleBot/
 │   └── ProyectoFinal_StyleBot.docx
 ├── README.md
 └── requirements.txt
+```
 
 ## Ejecución
 
