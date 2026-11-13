@@ -25,7 +25,6 @@ El notebook principal de esta parte es [`notebooks/01_datos.ipynb`](notebooks/01
 
 ## Estructura inicial
 
-```text
 StyleBot/
 ├── datos/                 Categorías, índices y protocolo reproducible
 ├── documentacion/         Informe final y aportaciones
@@ -35,7 +34,7 @@ StyleBot/
 ├── README.md              Descripción general
 ├── README_DATOS.md        Instrucciones de preparación de datos
 └── requirements.txt       Bibliotecas utilizadas
-```
+
 
 ## Ejecución
 
@@ -58,9 +57,64 @@ El informe de la primera entrega está en [`documentacion/ProyectoFinal_StyleBot
 
 Antes de entregar, se debe abrir `notebooks/E1_StyleBot.ipynb` en Google Colab, ejecutar todas las celdas de arriba hacia abajo y comprobar que las secciones 1 a 8, las tablas, las gráficas y las conclusiones aparezcan sin errores.
 
+## Segunda entrega
+
+Esta entrega desarrolla y compara redes neuronales convolucionales para clasificar las prendas de Fashion-MNIST.
+Se conserva la misma división de la Entrega 1.
+
+- 48,000 imágenes de entrenamiento.
+- 12,000 imágenes de validación.
+- 10,000 imágenes de prueba.
+- Semilla 42.
+- Píxeles normalizados entre 0 y 1.
+- Diez categorías equilibradas.
+- Imágenes adaptadas a la forma `(28, 28, 1)`.
+- Aumento de datos aplicado solamente al entrenamiento.
+- El conjunto de prueba no se utiliza para seleccionar arquitecturas.
+
+En esta entrega, el notebook principal esta en `notebooks/entrega2/00_datos_cnn.ipynb` y las reglas detalladas están en [`README_DATOS.md`](README_DATOS.md).
+
+## Estructura inicial
+
+StyleBot/
+├── notebooks/
+│   └── entrega2/
+│       ├── 00_datos_cnn.ipynb
+│       ├── 01_arquitecturas_cnn.ipynb
+│       ├── 02_metricas_comparacion.ipynb
+│       ├── 03_inferencia_integracion.ipynb
+│       └── E2_StyleBot.ipynb
+├── modelos/
+│   └── stylebot_cnn_final.keras
+├── resultados/
+│   └── entrega2/
+├── documentacion/
+│   └── ProyectoFinal_StyleBot.docx
+├── README.md
+└── requirements.txt
+
+## Ejecución
+
+1. Abrir `notebooks/entrega2/E2_StyleBot.ipynb` en Google Colab.
+2. Ejecutar todas las celdas de arriba hacia abajo.
+3. Comprobar que las tablas y gráficas aparezcan.
+4. Confirmar que el modelo final se pueda guardar y cargar.
+5. No utilizar el conjunto de prueba para elegir arquitecturas o hiperparámetros.
+
+## Notebooks de la segunda entrega
+
+- [`00_datos_cnn.ipynb`](notebooks/entrega2/00_datos_cnn.ipynb): carga, preparación, división y aumento de datos para las CNN.
+- [`01_arquitecturas_cnn.ipynb`](notebooks/entrega2/01_arquitecturas_cnn.ipynb): desarrollo y entrenamiento de tres arquitecturas CNN de diferente profundidad, con BatchNormalization, Dropout y callbacks.
+- [`02_metricas_comparacion.ipynb`](notebooks/entrega2/02_metricas_comparacion.ipynb): evaluación de modelos, curvas de aprendizaje, matrices de confusión y comparación contra los modelos clásicos de la primera entrega.
+- [`03_inferencia_integracion.ipynb`](notebooks/entrega2/03_inferencia_integracion.ipynb): inferencia, integración del modelo CNN y pruebas de clasificación.
+- [`E2_StyleBot.ipynb`](notebooks/entrega2/E2_StyleBot.ipynb): notebook final integrado de la segunda entrega, incluyendo CNN y transfer learning con MobileNetV2.
+
 ## Fuentes principales
 
 - [TensorFlow Fashion-MNIST](https://www.tensorflow.org/api_docs/python/tf/keras/datasets/fashion_mnist/load_data)
 - [Tutorial de clasificación de TensorFlow](https://www.tensorflow.org/tutorials/keras/classification)
 - [División de datos en scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)
-
+- [Inverted residuals and linear bottlenecks](https://doi.org/10.1109/CVPR.2018.00474)
+- [EarlyStopping](https://keras.io/api/callbacks/early_stopping/)
+- [Dropout](https://jmlr.org/papers/v15/srivastava14a.html)
+- [Convolutional neural networks Stanford University](https://cs231n.github.io/convolutional-networks/)
