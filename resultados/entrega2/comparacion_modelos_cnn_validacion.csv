@@ -1,0 +1,6 @@
+Modelo,Parámetros,Tiempo (s),Val Loss,Val Accuracy,Val F1 Macro
+Arquitectura A (Sin aumento),402442,49.07,0.2363,0.9213,0.9215
+Arquitectura A (Con aumento),402442,199.93,0.2925,0.901,0.9006
+Arquitectura B (Intermedia),421930,251.71,0.2629,0.9025,0.9013
+Arquitectura C (Profunda),1749034,360.68,0.1903,0.9321,0.9319
+MobileNetV2 (Transfer Learning),2428362,316.98,1.585,0.4172,0.4261
