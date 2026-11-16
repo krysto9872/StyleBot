@@ -1,6 +1,0 @@
-﻿Modelo,Accuracy,Precision macro,Recall macro,F1 macro
-Arquitectura A (Sin aumento),0.921333,0.92206,0.921333,0.921458
-Arquitectura A (Con aumento),0.901,0.900836,0.901,0.900648
-Arquitectura B (Intermedia),0.9025,0.901548,0.9025,0.901272
-Arquitectura C (Profunda),0.932083,0.931832,0.932083,0.931902
-MobileNetV2 (Transfer Learning),0.417167,0.568094,0.417167,0.426106
