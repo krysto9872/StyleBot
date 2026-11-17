@@ -1,9 +1,9 @@
 # Revisión del líder: reproducibilidad, integración y uso de datos
 
 **Responsable:** Krysto Alberto Adan Jauregui Zuñiga  
-**Fecha de actualización:** 15 de noviembre de 2026  
+**Fecha de actualización:** 16 de noviembre de 2026  
 **Entrega:** 2 - Redes neuronales convolucionales  
-**Corte revisado:** cierre de actividades del sábado 14 de noviembre
+**Corte revisado:** revisión técnica del lunes 16 de noviembre
 
 ## Archivos revisados
 
@@ -117,3 +117,53 @@ La decisión de conservar la Arquitectura C ya estaba sustentada por validación
 - Agregar las curvas reales al informe.
 - Realizar el lunes la evaluación final documentada sin ajustes posteriores.
 - Completar el notebook integrado, las conclusiones, contribuciones y referencias.
+
+
+## Actualización del líder: lunes 16 de noviembre de 2026
+
+### Evidencias nuevas revisadas
+
+- `modelos/mobilenetv2_transfer.keras` fue publicado y puede cargarse como modelo entrenado.
+- `notebooks/entrega2/01_arquitecturas_cnn.ipynb` contiene 13 celdas de código ejecutadas, sin salidas de error, y verifica la recarga de la Arquitectura C y de MobileNetV2.
+- Ángel Uriel publicó `resultados/tablas/tabla_comparativa_validacion.csv` y `resultados/graficas/matriz_confusion_mobilenetv2_validacion.png`.
+- Luis Ángel ejecutó nuevamente la inferencia con el archivo entrenado de MobileNetV2 y generó la comparación contra la Arquitectura C.
+
+### Corrección de las métricas de MobileNetV2
+
+El valor de 0.4172 de accuracy y 0.4261 de F1 macro corresponde al experimento inicial con la base congelada. Después del entrenamiento controlado y la verificación del archivo final, `modelos/mobilenetv2_transfer.keras` obtuvo los siguientes resultados reproducidos en validación:
+
+| Modelo verificado | Accuracy de validación | F1 macro de validación | Estado |
+|---|---:|---:|---|
+| MobileNetV2 inicial con base congelada | 0.4172 | 0.4261 | Referencia experimental |
+| MobileNetV2 entrenado y guardado | 0.9128 | 0.9122 | Modelo final de transferencia |
+
+Para la comparación final debe utilizarse 0.9128 y 0.9122. La tabla de Ángel y el resumen textual del notebook de Juan todavía muestran el resultado inicial, por lo que deben distinguir las dos etapas y agregar el modelo final entrenado.
+
+### Comparación de inferencia verificada
+
+| Modelo | Tamaño del archivo | Tiempo individual | Tiempo por imagen en lote | Imágenes por segundo | Accuracy de validación | F1 macro |
+|---|---:|---:|---:|---:|---:|---:|
+| Arquitectura C | 20.11 MB | 26.740 ms | 1.3212 ms | 757 | 0.9321 | 0.9319 |
+| MobileNetV2 entrenado | 11.12 MB | 211.154 ms | 9.4831 ms | 105 | 0.9128 | 0.9122 |
+
+La Arquitectura C supera a MobileNetV2 en accuracy y F1 macro y también es considerablemente más rápida en la medición realizada. MobileNetV2 ocupa menos espacio en disco, pero no compensa la pérdida de precisión ni el mayor tiempo de inferencia para el robot.
+
+### Congelamiento de modelos y autorización de prueba final
+
+A partir de esta revisión quedan congelados los siguientes archivos:
+
+- `modelos/stylebot_cnn_final.keras`, Arquitectura C.
+- `modelos/mobilenetv2_transfer.keras`, modelo final de transferencia.
+
+Se autoriza la evaluación final con las 10,000 imágenes oficiales de prueba. Esta evaluación deberá realizarse una sola vez con los archivos congelados. No se permite modificar arquitectura, hiperparámetros, aumento, callbacks o pesos después de observar los resultados de prueba. Los resultados anticipados existentes no se utilizaron para seleccionar el modelo.
+
+### Pendientes detectados antes de la integración final
+
+1. **Juan José:** corregir el resumen de `01_arquitecturas_cnn.ipynb` para separar el MobileNetV2 inicial (0.4172/0.4261) del modelo entrenado final (0.9128/0.9122).
+2. **Ángel Uriel:** actualizar su tabla comparativa con la fila del MobileNetV2 entrenado final y realizar la evaluación final de prueba sin ajustar posteriormente los modelos.
+3. **Luis Ángel:** su actualización del lunes fue subida dentro de `src/notebooks/entrega2/` y `src/resultados/entrega2/`. Debe colocar el notebook y sus resultados en `notebooks/entrega2/` y `resultados/entrega2/`, evitando carpetas duplicadas.
+4. **Jacqueline:** integrar las gráficas, corregir la tabla de contribuciones y actualizar el informe con las métricas finales verificadas.
+
+### Decisión definitiva del líder
+
+La Arquitectura C permanece como modelo seleccionado para StyleBot. Su elección se realizó con validación antes de autorizar la prueba final. El modelo de transferencia se conserva como comparación experimental y evidencia del uso de aprendizaje por transferencia.
