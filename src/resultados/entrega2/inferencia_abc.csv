@@ -1,0 +1,4 @@
+modelo,origen,parametros,parametros_tabla_equipo,archivo_keras_mb,pesos_mb,carga_s,ms_preparacion_por_imagen,ms_por_imagen_individual,ms_por_imagen_en_lote,imagenes_por_segundo_en_lote,val_accuracy_calculada,val_f1_macro_calculado,val_accuracy_tabla_equipo,val_f1_macro_tabla_equipo
+Arquitectura A,archivo entrenado,402442,402442,4.63,1.54,0.128,0.0017,8.942,0.3979,2513,0.9213,0.9215,0.9213,0.9215
+Arquitectura B,archivo entrenado,421930,421930,4.88,1.61,0.338,0.0036,14.806,0.4407,2269,0.899,0.8984,0.9025,0.9013
+Arquitectura C,archivo entrenado,1749034,1749034,20.11,6.67,0.544,0.0018,34.687,1.3222,756,0.9321,0.9319,0.9321,0.9319
