@@ -1,6 +1,6 @@
 """Inferencia de StyleBot: guardar, cargar y usar modelos .keras.
 
-Responsable: Luis Angel Mendosa Gaytán (Entrega 2, inferencia e integración).
+Responsable: Luis Angel Mendoza Gaytán (Entrega 2, inferencia e integración).
 Uso desde la terminal, en una sesión limpia:
     python inferencia_stylebot.py --modelo modelos/stylebot_cnn_final.keras --n 5
 
@@ -39,17 +39,6 @@ def cargar_modelo(ruta):
     if not os.path.exists(ruta):
         raise FileNotFoundError(f"No existe el modelo: {ruta}")
     return tf.keras.models.load_model(ruta)
-
-
-def copia_para_inferencia(modelo, ruta):
-    """Guarda solo arquitectura y pesos, sin el estado del optimizador.
-
-    Las predicciones son idénticas, pero el archivo pesa menos porque no guarda
-    los momentos de Adam, que solo sirven para seguir entrenando.
-    """
-    copia = tf.keras.models.clone_model(modelo)
-    copia.set_weights(modelo.get_weights())
-    return guardar_modelo(copia, ruta)
 
 
 def tamano_modelo_mb(ruta):
