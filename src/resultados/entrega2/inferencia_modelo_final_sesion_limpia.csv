@@ -1,9 +1,0 @@
-prediccion,categoria_real,probabilidad,correcta,tiempo_ms,segunda_opcion
-Sandalia,Sandalia,1.0,True,66.88,Tenis (0.000)
-Abrigo,Abrigo,0.9237,True,26.42,Camisa (0.071)
-Sandalia,Sandalia,1.0,True,25.37,Tenis (0.000)
-Suéter,Suéter,0.9331,True,25.12,Abrigo (0.067)
-Pantalón,Pantalón,1.0,True,24.94,Camiseta/top (0.000)
-Sandalia,Sandalia,1.0,True,24.89,Botín (0.000)
-Camiseta/top,Camiseta/top,0.9938,True,25.12,Camisa (0.005)
-Pantalón,Pantalón,1.0,True,25.15,Abrigo (0.000)
