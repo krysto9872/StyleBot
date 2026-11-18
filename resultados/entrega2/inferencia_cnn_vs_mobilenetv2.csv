@@ -1,3 +1,3 @@
-modelo,origen,parametros,parametros_tabla_equipo,archivo_keras_mb,archivo_inferencia_mb,carga_s,ms_preparacion_por_imagen,ms_por_imagen_individual,ms_por_imagen_en_lote,imagenes_por_segundo_en_lote,val_accuracy_calculada,val_f1_macro_calculado,val_accuracy_tabla_equipo,val_f1_macro_tabla_equipo
-CNN propia C (final),archivo entrenado,1749034,1749034,20.11,20.11,0.887,0.0022,32.048,1.3858,722,0.9321,0.9319,0.9321,0.9319
-MobileNetV2,arquitectura reconstruida (sin pesos entrenados),2428362,2428362,,9.82,,0.023,222.091,2.1333,469,,,0.4172,0.4261
+modelo,origen,parametros,parametros_tabla_equipo,archivo_keras_mb,pesos_mb,carga_s,ms_preparacion_por_imagen,ms_por_imagen_individual,ms_por_imagen_en_lote,imagenes_por_segundo_en_lote,val_accuracy_calculada,val_f1_macro_calculado,val_accuracy_tabla_equipo,val_f1_macro_tabla_equipo
+CNN propia C (final),archivo entrenado,1749034,1749034,20.11,6.67,0.48,0.0019,26.74,1.3212,757,0.9321,0.9319,0.9321,0.9319
+MobileNetV2,archivo entrenado,2428362,2428362,11.12,9.26,1.366,0.0015,211.154,9.4831,105,0.9128,0.9122,0.4172,0.4261
