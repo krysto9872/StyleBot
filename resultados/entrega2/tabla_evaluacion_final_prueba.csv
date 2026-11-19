@@ -1,0 +1,5 @@
+Modelo,Archivo,Parámetros,Test Loss,Test Accuracy,Test Precision Macro,Test Recall Macro,Test F1 Macro
+Arquitectura C (Profunda - Final),stylebot_cnn_final.keras,1749034,0.2066,0.9263,0.9258,0.9263,0.9259
+Arquitectura A (Sencilla),arquitectura_a.keras,402442,0.2571,0.9126,0.913,0.9126,0.9126
+MobileNetV2 (Transfer Learning),mobilenetv2_transfer.keras,2428362,0.2868,0.903,0.9026,0.903,0.9022
+Arquitectura B (Intermedia),arquitectura_b.keras,421930,0.2992,0.8912,0.8903,0.8912,0.8902
