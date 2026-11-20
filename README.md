@@ -7,7 +7,7 @@ StyleBot es un proyecto académico que desarrolla un sistema para identificar pr
 - Krysto Alberto Adan Jauregui Zuñiga: Coordinador del proyecto y responsable de datos
 - Jacqueline Soto: Responsable de integración, documentación y demostración
 - Juan José Aranda Flores: Responsable de redes neuronales (CNN)
-- Luis Ángel Mendosa Gaytan: Responsable de simulación y aprendizaje por refuerzo
+- Luis Ángel Mendoza Gaytán: Responsable de simulación y aprendizaje por refuerzo
 - Ángel Uriel Martínez Godinez: Responsable de aprendizaje automático clásico
 
 ## Primera entrega
@@ -111,6 +111,46 @@ StyleBot/
 - [`02_metricas_comparacion.ipynb`](notebooks/entrega2/02_metricas_comparacion.ipynb): evaluación de modelos, curvas de aprendizaje, matrices de confusión y comparación contra los modelos clásicos de la primera entrega.
 - [`03_inferencia_integracion.ipynb`](notebooks/entrega2/03_inferencia_integracion.ipynb): inferencia, integración del modelo CNN y pruebas de clasificación.
 - [`E2_StyleBot.ipynb`](notebooks/entrega2/E2_StyleBot.ipynb): notebook final integrado de la segunda entrega, incluyendo CNN y transfer learning con MobileNetV2.
+
+## Tercera entrega
+
+Esta entrega integra la CNN congelada de la Entrega 2 con un almacén simulado de 8 por 8. El robot recibe una prenda, usa la predicción de la CNN como percepción y aprende a llevarla al estante correspondiente mediante Q-Learning y Dyna-Q.
+
+El protocolo común está en [`notebooks/entrega3/00_protocolo_entrega3.ipynb`](notebooks/entrega3/00_protocolo_entrega3.ipynb) y la especificación completa del MDP está en [`documentacion/entrega3/ESPECIFICACION_MDP.md`](documentacion/entrega3/ESPECIFICACION_MDP.md).
+
+Reglas comunes de esta entrega:
+
+- Almacén de 8 por 8 con recepción, pasillos, obstáculos y diez estantes.
+- Estado tabular de 1,408 posibilidades: posición, prenda percibida y disponibilidad del estante destino.
+- Seis acciones: arriba, abajo, izquierda, derecha, tomar y colocar.
+- Recompensas: +10 colocación correcta, -8 incorrecta, -3 estante lleno, -2 acción inválida y -1 paso normal.
+- Semilla común 42 para reproducibilidad.
+- Comparación de Q-Learning, Dyna-Q y un agente aleatorio con los mismos episodios de evaluación.
+- La CNN final se carga desde `modelos/stylebot_cnn_final.keras` y no se vuelve a entrenar.
+- La demostración final procesa 50 prendas y reporta el porcentaje de éxito.
+
+### Organización de la tercera entrega
+
+```text
+StyleBot/
+├── datos/entrega3/          Protocolo y datos de evaluación
+├── demo/entrega3/           GIF o video final de hasta un minuto
+├── documentacion/entrega3/  MDP, plan y aportaciones para el informe
+├── modelos/entrega3/        Tablas Q entrenadas
+├── notebooks/entrega3/      Desarrollo e integración de la Entrega 3
+├── resultados/entrega3/     Tablas, gráficas, métricas y revisión
+└── src/entrega3/            Entorno, agentes y conexión con la CNN
+```
+
+### Orden de ejecución de la tercera entrega
+
+1. Ejecutar `notebooks/entrega3/00_protocolo_entrega3.ipynb` para comprobar las reglas comunes.
+2. Probar `src/entrega3/entorno_almacen.py` y `src/entrega3/probar_entorno.py`.
+3. Entrenar Q-Learning y Dyna-Q en `notebooks/entrega3/01_qlearning_dynaq.ipynb`.
+4. Integrar la CNN congelada en `notebooks/entrega3/02_integracion_cnn_rl.ipynb`.
+5. Comparar algoritmos y agente aleatorio en `notebooks/entrega3/03_evaluacion_rl.ipynb`.
+6. Ejecutar el notebook integrado `notebooks/entrega3/E3_StyleBot.ipynb` de arriba hacia abajo.
+7. Verificar el informe, las gráficas, las tablas y la demostración de 50 prendas antes de entregar.
 
 ## Fuentes principales
 
