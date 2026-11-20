@@ -1,0 +1,52 @@
+{
+  "version": "entrega3-1.0",
+  "semilla": 42,
+  "semilla_demo": 2026,
+  "tamano_mapa": [8, 8],
+  "recepcion": [[7, 3], [7, 4]],
+  "categorias": [
+    "Camiseta/top",
+    "Pantalón",
+    "Suéter",
+    "Vestido",
+    "Abrigo",
+    "Sandalia",
+    "Camisa",
+    "Tenis",
+    "Bolso",
+    "Botín"
+  ],
+  "estantes": {
+    "0": [0, 0],
+    "1": [0, 1],
+    "2": [0, 2],
+    "3": [0, 3],
+    "4": [0, 4],
+    "5": [0, 5],
+    "6": [0, 6],
+    "7": [0, 7],
+    "8": [4, 0],
+    "9": [4, 7]
+  },
+  "acciones": {
+    "0": "arriba",
+    "1": "abajo",
+    "2": "izquierda",
+    "3": "derecha",
+    "4": "tomar",
+    "5": "colocar"
+  },
+  "recompensas": {
+    "correcto": 10,
+    "incorrecto": -8,
+    "lleno": -3,
+    "devuelta": -3,
+    "invalida": -2,
+    "paso": -1
+  },
+  "numero_estados": 1408,
+  "numero_acciones": 6,
+  "prendas_demo": 50,
+  "max_pasos_por_prenda": 60,
+  "modelo_cnn": "modelos/stylebot_cnn_final.keras"
+}
