@@ -1,0 +1,2 @@
+episodios,recompensa_promedio,recompensa_desv,tasa_exito_prendas,tasa_exito_episodios,pasos_promedio,incorrectas_promedio,fallos_cnn_promedio,fallos_politica_promedio,acciones_invalidas_promedio,intentos_estante_lleno_promedio,devueltas_promedio,agente,estado
+50,-454.22,11.354805150243662,0.016,0.0,300.0,0.54,0.0,0.54,150.92,0.16,0.04,Aleatorio,completo
