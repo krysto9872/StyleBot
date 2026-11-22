@@ -12,6 +12,7 @@ Con ``--estricto`` también devuelve error mientras falte algún archivo final.
 from __future__ import annotations
 
 import argparse
+import ast
 import json
 import sys
 from pathlib import Path
@@ -57,6 +58,42 @@ def registrar(condicion: bool, mensaje: str, errores: list[str]) -> None:
     print(f"[{marca}] {mensaje}")
     if not condicion:
         errores.append(mensaje)
+
+
+def registrar_aviso(condicion: bool, mensaje: str, avisos: list[str]) -> None:
+    """Registra una comprobación que solo será obligatoria en modo estricto."""
+    marca = "OK" if condicion else "AVISO"
+    print(f"[{marca}] {mensaje}")
+    if not condicion:
+        avisos.append(mensaje)
+
+
+def cargar_notebook(ruta_relativa: str) -> dict:
+    """Carga un notebook desde el repositorio sin ejecutarlo ni importar TensorFlow."""
+    with (RAIZ / ruta_relativa).open(encoding="utf-8") as archivo:
+        return json.load(archivo)
+
+
+def resumir_notebook(notebook: dict) -> dict:
+    """Devuelve ejecución, errores, código y salidas guardadas de un notebook."""
+    celdas_codigo = [celda for celda in notebook.get("cells", []) if celda.get("cell_type") == "code"]
+    salidas = [salida for celda in celdas_codigo for salida in celda.get("outputs", [])]
+    errores = [salida for salida in salidas if salida.get("output_type") == "error"]
+
+    def texto_salida(salida: dict) -> str:
+        texto = salida.get("text", "")
+        if isinstance(texto, list):
+            return "".join(texto)
+        return str(texto)
+
+    return {
+        "codigo": "\n".join("".join(celda.get("source", [])) for celda in celdas_codigo),
+        "todo": "\n".join("".join(celda.get("source", [])) for celda in notebook.get("cells", [])),
+        "salidas": "\n".join(texto_salida(salida) for salida in salidas),
+        "celdas_codigo": len(celdas_codigo),
+        "celdas_ejecutadas": sum(celda.get("execution_count") is not None for celda in celdas_codigo),
+        "errores": errores,
+    }
 
 
 def validar_protocolo() -> list[str]:
@@ -115,6 +152,87 @@ def revisar_entregables() -> list[str]:
     return faltantes
 
 
+def validar_componentes_nuevos() -> tuple[list[str], list[str]]:
+    """Comprueba percepción CNN, integración y evaluación contra el protocolo común."""
+    errores: list[str] = []
+    avisos: list[str] = []
+    print("\n4. Compatibilidad de percepción, integración y evaluación")
+
+    ruta_percepcion = RAIZ / "src" / "entrega3" / "percepcion_cnn.py"
+    if ruta_percepcion.is_file():
+        fuente = ruta_percepcion.read_text(encoding="utf-8")
+        try:
+            ast.parse(fuente)
+            registrar(True, "percepcion_cnn.py tiene sintaxis válida", errores)
+        except SyntaxError as exc:
+            registrar(False, f"percepcion_cnn.py tiene sintaxis válida: {exc}", errores)
+        registrar("datos/entrega3/protocolo_entrega3.json" in fuente, "Percepción usa el protocolo común", errores)
+        registrar("modelos/stylebot_cnn_final.keras" in fuente, "Percepción usa la CNN final establecida", errores)
+        registrar(".fit(" not in fuente, "La CNN no se vuelve a entrenar", errores)
+        registrar("modelo.trainable = False" in fuente, "La CNN se congela para inferencia", errores)
+    else:
+        registrar_aviso(False, "Falta src/entrega3/percepcion_cnn.py", avisos)
+
+    ruta_integracion = "notebooks/entrega3/02_integracion_cnn_rl.ipynb"
+    if (RAIZ / ruta_integracion).is_file():
+        resumen = resumir_notebook(cargar_notebook(ruta_integracion))
+        registrar(resumen["celdas_codigo"] > 0, "Integración CNN-RL contiene código", errores)
+        registrar(
+            resumen["celdas_ejecutadas"] == resumen["celdas_codigo"],
+            "Todas las celdas de integración CNN-RL están ejecutadas",
+            errores,
+        )
+        registrar(not resumen["errores"], "Integración CNN-RL no contiene errores guardados", errores)
+        registrar("AlmacenStyleBot" in resumen["codigo"], "Integración usa el entorno común", errores)
+        registrar("49/50" in resumen["salidas"], "Simulación de 50 prendas conserva su resultado", errores)
+        registrar(
+            "Fallos de CNN" in resumen["salidas"] and "Fallos política" in resumen["salidas"],
+            "Integración separa fallos de CNN y de política",
+            errores,
+        )
+    else:
+        registrar_aviso(False, f"Falta {ruta_integracion}", avisos)
+
+    ruta_evaluacion = "notebooks/entrega3/03_evaluacion_rl.ipynb"
+    if (RAIZ / ruta_evaluacion).is_file():
+        resumen = resumir_notebook(cargar_notebook(ruta_evaluacion))
+        registrar(
+            resumen["celdas_ejecutadas"] == resumen["celdas_codigo"],
+            "Todas las celdas de evaluación están ejecutadas",
+            errores,
+        )
+        registrar(not resumen["errores"], "Evaluación no contiene errores guardados", errores)
+        registrar("SEMILLA = 1000" in resumen["codigo"], "Evaluación inicia en la semilla 1000", errores)
+        registrar("EPISODIOS_EVALUACION = 50" in resumen["codigo"], "Evaluación usa 50 episodios", errores)
+        nombres_comunes = [
+            "comparacion_agentes.csv",
+            "configuraciones_hiperparametros.csv",
+            "curva_recompensa.png",
+            "comparacion_tasa_exito.png",
+            "analisis_fallos.csv",
+        ]
+        registrar(
+            all(nombre in resumen["codigo"] for nombre in nombres_comunes),
+            "Evaluación exporta todos los nombres comunes",
+            errores,
+        )
+    else:
+        registrar_aviso(False, f"Falta {ruta_evaluacion}", avisos)
+
+    ruta_final = "notebooks/entrega3/E3_StyleBot.ipynb"
+    if (RAIZ / ruta_final).is_file():
+        resumen = resumir_notebook(cargar_notebook(ruta_final))
+        registrar_aviso(
+            resumen["celdas_codigo"] > 0,
+            "E3_StyleBot.ipynb todavía es una estructura sin código integrado",
+            avisos,
+        )
+    else:
+        registrar_aviso(False, f"Falta {ruta_final}", avisos)
+
+    return errores, avisos
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -126,6 +244,8 @@ def main() -> int:
 
     errores = validar_protocolo()
     faltantes = revisar_entregables()
+    errores_componentes, avisos = validar_componentes_nuevos()
+    errores.extend(errores_componentes)
 
     print("\nResumen")
     if errores:
@@ -133,8 +253,9 @@ def main() -> int:
     else:
         print("El entorno actual es compatible con el protocolo común de la Entrega 3.")
     print(f"Archivos finales pendientes: {len(faltantes)} de {len(ENTREGABLES_FINALES)}.")
+    print(f"Avisos de integración: {len(avisos)}.")
 
-    if errores or (argumentos.estricto and faltantes):
+    if errores or (argumentos.estricto and (faltantes or avisos)):
         return 1
     return 0
 
