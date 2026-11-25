@@ -1,0 +1,4 @@
+episodios,recompensa_promedio,recompensa_desv,tasa_exito_prendas,tasa_exito_episodios,pasos_promedio,incorrectas_promedio,fallos_cnn_promedio,fallos_politica_promedio,acciones_invalidas_promedio,intentos_estante_lleno_promedio,devueltas_promedio,pasos_por_prenda,episodios_truncados,episodios_entrenamiento,tiempo_entrenamiento_s,configuracion,agente,estado
+50,-40.46,47.9079,0.924,0.76,90.72,0.0,0.0,0.0,0.0,0.0,0.28,18.144,2,15000,23.39,Q-Learning A,Q-Learning,completo
+50,-27.8,6.5666,0.936,0.76,78.64,0.0,0.0,0.0,0.0,0.0,0.32,15.728,0,3000,41.54,Dyna-Q A (n=30),Dyna-Q,completo
+50,-454.22,11.3548,0.016,0.0,300.0,0.54,0.0,0.54,150.92,0.16,0.04,60.0,50,0,0.0,-,Aleatorio,completo

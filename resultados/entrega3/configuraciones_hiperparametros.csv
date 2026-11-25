@@ -1,1 +1,7 @@
 algoritmo,configuracion,alpha,gamma,epsilon_inicial,epsilon_minimo,decaimiento_epsilon,pasos_planificacion,episodios_entrenamiento,recompensa_promedio,tasa_exito_prendas,pasos_promedio,semilla,responsable,estado
+Q-Learning,A,0.1,0.95,1.0,0.05,0.995,0,15000,-42.88,0.884,90.66,42,Luis Ángel Mendoza Gaytán,seleccionada
+Q-Learning,B,0.2,0.99,1.0,0.05,0.997,0,15000,-358.58,0.496,225.0,42,Luis Ángel Mendoza Gaytán,completo
+Dyna-Q,A,0.1,0.95,1.0,0.05,0.995,10,3000,-44.76,0.88,92.4,42,Luis Ángel Mendoza Gaytán,completo
+Dyna-Q,A,0.1,0.95,1.0,0.05,0.995,30,3000,-29.26,0.908,78.28,42,Luis Ángel Mendoza Gaytán,seleccionada
+Dyna-Q,B,0.2,0.99,1.0,0.05,0.997,10,3000,-536.04,0.128,290.72,42,Luis Ángel Mendoza Gaytán,completo
+Dyna-Q,B,0.2,0.99,1.0,0.05,0.997,30,3000,-355.04,0.276,282.74,42,Luis Ángel Mendoza Gaytán,completo

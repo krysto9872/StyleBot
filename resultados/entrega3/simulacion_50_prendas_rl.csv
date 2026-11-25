@@ -1,0 +1,4 @@
+agente,semilla,recompensa_total,exito_prendas,exito_episodio,pasos,pasos_por_prenda,terminado,truncado,correctas,incorrectas,fallos_cnn,fallos_politica,acciones_invalidas,intentos_estante_lleno,devueltas
+Q-Learning,2026,-413.0,0.98,0,945,18.9,True,False,49,1,1,0,0,0,0
+Dyna-Q,2026,-389.0,0.98,0,921,18.42,True,False,49,1,1,0,0,0,0
+Aleatorio,2026,-4502.0,0.02,0,3000,60.0,False,True,1,5,0,5,1478,0,0
