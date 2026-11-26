@@ -152,6 +152,68 @@ StyleBot/
 6. Ejecutar el notebook integrado `notebooks/entrega3/E3_StyleBot.ipynb` de arriba hacia abajo.
 7. Verificar el informe, las gráficas, las tablas y la demostración de 50 prendas antes de entregar.
 
+## Cuarta y última entrega
+
+La Entrega 4 integra en un solo flujo reproducible los componentes desarrollados en las tres entregas anteriores: preparación de datos, modelos clásicos, análisis no supervisado, recomendador, CNN y agentes de aprendizaje por refuerzo.
+
+La entrega oficial es el miércoles 2 de diciembre de 2026 antes de las 19:00. El cierre interno del equipo será el martes 1 de diciembre a las 19:00.
+
+### Organización de la Entrega 4
+
+~~~text
+StyleBot/
+├── app/                         Aplicación Streamlit opcional
+├── demo/entrega4/              Evidencia de la demostración final
+├── documentacion/entrega4/     Plan, checklist, contrato y coevaluación
+├── notebooks/entrega4/         Notebook final y comparación global
+├── presentacion/               Diapositivas de la exposición
+├── resultados/entrega4/        Tabla global, gráficas y pruebas
+└── src/entrega4/               Funciones finales de CNN y simulación
+~~~
+
+El plan, la lista de verificación y las reglas comunes se encuentran en:
+
+- [PLAN_TRABAJO_ENTREGA4.md](documentacion/entrega4/PLAN_TRABAJO_ENTREGA4.md)
+- [CHECKLIST_FINAL.md](documentacion/entrega4/CHECKLIST_FINAL.md)
+- [CONTRATO_INTEGRACION.md](documentacion/entrega4/CONTRATO_INTEGRACION.md)
+
+### Responsables
+
+- Krysto Alberto Adan Jauregui Zúñiga: estructura, integración, notebook final, revisión y entrega.
+- Ángel Uriel Martínez Godinez: comparación global de modelos, tabla, gráfica y análisis.
+- Juan José Aranda Flores: función reutilizable de inferencia CNN y pruebas.
+- Luis Ángel Mendoza Gaytán: función reutilizable de simulación de aprendizaje por refuerzo y pruebas.
+- Jacqueline Soto: informe final, PDF, presentación, demostración, coevaluación e interfaz web opcional.
+
+### Orden de ejecución final
+
+1. Abrir [notebooks/entrega4/E4_StyleBot.ipynb](notebooks/entrega4/E4_StyleBot.ipynb) en Google Colab.
+2. Ejecutar todas las celdas de arriba hacia abajo.
+3. Comprobar la carga de la CNN y las tablas Q guardadas.
+4. Ejecutar la clasificación, selección de estante y simulación del agente.
+5. Verificar la demostración de 50 prendas y la separación de fallos de CNN y de política.
+6. Confirmar que las tablas, gráficas y conclusiones permanezcan visibles.
+7. Descargar el notebook ejecutado y reemplazar la plantilla del repositorio.
+
+### Entregables finales obligatorios
+
+- Informe técnico final en PDF.
+- Notebook E4_StyleBot.ipynb ejecutado sin errores.
+- Repositorio completo y reproducible.
+- README y requirements.txt actualizados.
+- Modelos guardados o enlaces funcionales.
+- Presentación final de diez minutos.
+- Formato de coevaluación.
+- Demostración funcional de 50 prendas.
+- Evidencias de participación mediante commits.
+- Correcciones recibidas durante las entregas anteriores.
+
+### Aplicación web opcional
+
+La aplicación con Streamlit o Gradio es una actividad adicional para obtener puntos extra. Permitirá seleccionar o cargar una imagen, mostrar la categoría y confianza de la CNN y presentar el estante, recorrido, pasos, recompensa y resultado del agente.
+
+La aplicación no genera imágenes y no debe retrasar los entregables obligatorios.
+
 ## Fuentes principales
 
 - [TensorFlow Fashion-MNIST](https://www.tensorflow.org/api_docs/python/tf/keras/datasets/fashion_mnist/load_data)
