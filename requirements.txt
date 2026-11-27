@@ -1,9 +1,26 @@
-numpy==2.4.6
-scikit-learn==1.6.1
-matplotlib==3.10.0
+# StyleBot — Entregas 1 a 4
+# Entorno recomendado: Python 3.10 a 3.13.
+# Los módulos de la biblioteca estándar y google.colab no se instalan con pip.
+
+# Ciencia de datos y visualización
+numpy>=1.26,<3
+pandas>=2.0,<3
+matplotlib>=3.8,<4
+
+# Aprendizaje automático, procesamiento de imágenes y CNN
+scikit-learn>=1.6,<2
+scikit-image>=0.24,<1
 tensorflow==2.21.0
-pandas
-scikit-image
-gymnasium==1.2.2
-imageio==2.37.2
-pillow==12.0.0
+
+# Simulación y aprendizaje por refuerzo
+gymnasium>=1.2,<2
+
+# Imágenes y demostraciones
+imageio>=2.37,<3
+Pillow>=11,<13
+
+# Ejecución de notebooks
+ipython>=8,<10
+
+# Aplicación web opcional de la Entrega 4
+streamlit>=1.55,<2
