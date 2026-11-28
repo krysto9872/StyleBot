@@ -519,7 +519,30 @@ def ejecutar_pruebas_cnn(
     salida.parent.mkdir(parents=True, exist_ok=True)
     df_pruebas.to_csv(salida, index=False, encoding="utf-8")
     return df_pruebas
+    
+def predecir_prenda(
+    imagen: Any,
+    modelo: tf.keras.Model | None = None,
+    ruta_modelo: str | Path | None = None,
+    invertir_colores: bool = False,
+) -> Dict[str, Any]:
+    """Adaptador oficial para E4_StyleBot.ipynb y app/app.py (Streamlit).
 
+    Recibe directamente un archivo de st.file_uploader, ruta, PIL.Image, bytes o ndarray
+    y devuelve los cuatro campos requeridos por el protocolo de integración.
+    """
+    resultado = predecir_imagen(
+        imagen,
+        modelo=modelo,
+        ruta_modelo=ruta_modelo,
+        invertir_colores=invertir_colores,
+    )
+    return {
+        "indice_categoria": int(resultado["categoria_id"]),
+        "categoria": str(resultado["categoria"]),
+        "confianza": float(resultado["confianza"]),
+        "imagen_procesada": resultado["imagen_procesada"],
+    }
 
 if __name__ == "__main__":
     df = ejecutar_pruebas_cnn()
