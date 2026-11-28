@@ -1,0 +1,29 @@
+prueba,agente,categoria,categoria_real,estante,pasos,recompensa,exito,tipo_fallo,esperado,ok
+categoria,q_learning,Camiseta/top,Camiseta/top,"[0, 0]",14,-3,True,,exito,True
+categoria,q_learning,Pantalón,Pantalón,"[0, 1]",13,-2,True,,exito,True
+categoria,q_learning,Suéter,Suéter,"[0, 2]",12,-1,True,,exito,True
+categoria,q_learning,Vestido,Vestido,"[0, 3]",11,0,True,,exito,True
+categoria,q_learning,Abrigo,Abrigo,"[0, 4]",10,1,True,,exito,True
+categoria,q_learning,Sandalia,Sandalia,"[0, 5]",11,0,True,,exito,True
+categoria,q_learning,Camisa,Camisa,"[0, 6]",12,-1,True,,exito,True
+categoria,q_learning,Tenis,Tenis,"[0, 7]",13,-2,True,,exito,True
+categoria,q_learning,Bolso,Bolso,"[4, 0]",10,1,True,,exito,True
+categoria,q_learning,Botín,Botín,"[4, 7]",9,2,True,,exito,True
+error_cnn,q_learning,Camiseta/top,Suéter,"[0, 0]",14,-21,False,cnn,cnn,True
+estante_lleno,q_learning,Bolso,Bolso,"[4, 0]",3,-5,False,estante_lleno,estante_lleno,True
+categoria,dyna_q,Camiseta/top,Camiseta/top,"[0, 0]",12,-1,True,,exito,True
+categoria,dyna_q,Pantalón,Pantalón,"[0, 1]",11,0,True,,exito,True
+categoria,dyna_q,Suéter,Suéter,"[0, 2]",10,1,True,,exito,True
+categoria,dyna_q,Vestido,Vestido,"[0, 3]",9,2,True,,exito,True
+categoria,dyna_q,Abrigo,Abrigo,"[0, 4]",10,1,True,,exito,True
+categoria,dyna_q,Sandalia,Sandalia,"[0, 5]",11,0,True,,exito,True
+categoria,dyna_q,Camisa,Camisa,"[0, 6]",12,-1,True,,exito,True
+categoria,dyna_q,Tenis,Tenis,"[0, 7]",13,-2,True,,exito,True
+categoria,dyna_q,Bolso,Bolso,"[4, 0]",8,3,True,,exito,True
+categoria,dyna_q,Botín,Botín,"[4, 7]",9,2,True,,exito,True
+error_cnn,dyna_q,Camiseta/top,Suéter,"[0, 0]",12,-19,False,cnn,cnn,True
+estante_lleno,dyna_q,Bolso,Bolso,"[4, 0]",2,-4,False,estante_lleno,estante_lleno,True
+demo_50_prendas,q_learning,50 prendas CNN,,,945,-413,49/50,"cnn=1, politica=0","49/50, cnn=1, politica=0",True
+demo_50_prendas,dyna_q,50 prendas CNN,,,921,-389,49/50,"cnn=1, politica=0","49/50, cnn=1, politica=0",True
+tabla_sin_cambios,q_learning,,,,,,,,55977752cdfa39b0,True
+tabla_sin_cambios,dyna_q,,,,,,,,2a0c751617daea7c,True
