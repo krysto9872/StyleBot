@@ -1,0 +1,7 @@
+# Notas de exposición
+
+StyleBot usa varios modelos porque cada uno resuelve una parte diferente del problema. PCA reduce las imágenes a 50 componentes y conserva 86.3% de la varianza. K-Means encuentra agrupaciones parciales de las prendas. El recomendador con PCA y coseno logra Precision@5 de 0.8321.
+
+La CNN Arquitectura C reconoce la categoría de la prenda con F1 macro de 0.9259 en prueba. Después, los agentes de aprendizaje por refuerzo deciden cómo acomodarla en el almacén. Dyna-Q fue el mejor agente, con 93.6% de éxito de prendas, seguido de Q-Learning con 92.4%. El agente aleatorio solo obtuvo 1.6%.
+
+No se comparan directamente las métricas de los componentes porque las tareas son distintas. La conclusión es que la CNN identifica la prenda y Dyna-Q toma la mejor decisión de almacenamiento.
